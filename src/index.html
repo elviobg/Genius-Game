@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/game.css">
+    <script type="text/javascript" src="public/js/jquery_v3.6.0.min.js"></script>
     <title>Genius - The Game</title>
 </head>
 <body>
     <div class="game-container">
         <div id="board">    
-            <div class="field" id="green-field"></div>
-            <div class="field" id="red-field"></div>
-            <div class="field" id="yellow-field"></div>
-            <div class="field" id="blue-field"></div>
+            <div class="field" data-value="green" id="green-field"></div>
+            <div class="field" data-value="red" id="red-field"></div>
+            <div class="field" data-value="yellow" id="yellow-field"></div>
+            <div class="field" data-value="blue" id="blue-field"></div>
         </div>
     </div>
 </body>
+<script type="text/javascript" src="public/js/game.js"></script>
 </html>
