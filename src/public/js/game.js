@@ -66,7 +66,7 @@ function showSequence(order, index=0) {
 
 function correctAnswer() {
     game.level += 1;
-    play();
+    playNewStep();
 }
 
 function wrongAnswer() {
@@ -81,7 +81,7 @@ function clean() {
     game.player_turn = false;
 }
 
-function play() {
+function playNewStep() {
     createNewMove();
     showSequence(game.order);
     game.user_order = [];
@@ -89,5 +89,5 @@ function play() {
 
 function restart() {
     clean();
-    play();
+    playNewStep();
 }
