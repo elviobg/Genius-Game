@@ -3,6 +3,7 @@ const game = {
     order: [],
     user_order: [],
     time: 500,
+    player_turn: false,
 }
 
 const buttonsOrder = ['green-field', 'red-field', 'yellow-field', 'blue-field'];
@@ -15,7 +16,21 @@ $(document).ready(function() {
 });
 
 function playerMove(selectedColor) {
+    if(!game.player_turn) {
+        return;
+    }
+    const position = game.user_order.length;
+    if(game.order[position] !== selectedColor) {
+        wrongAnswer();
+    }
+    game.user_order[game.user_order.length] = selectedColor;
+
+    console.log(game.order);
+    console.log(game.user_order);
     console.log(selectedColor);
+    if(position === game.order.length - 1) {
+        correctAnswer();
+    }
 }
 
 function createNewMove() {
@@ -32,7 +47,9 @@ function turnOffColor(element) {
 }
 
 function showSequence(order, index=0) {
+    game.player_turn = false;
     if(order[index] === undefined) {
+        game.player_turn = true;
         return;
     }
     const element = $(`#${order[index]}`)[0];
@@ -47,10 +64,28 @@ function showSequence(order, index=0) {
 
 function correctAnswer() {
     game.level += 1;
+    play();
+}
+
+function wrongAnswer() {
+    console.log('Fim!');
+    clean();
+}
+
+function clean() {
+    game.level = 0;
+    game.order = [];
+    game.user_order = [];
+    game.player_turn = false;
 }
 
 function play() {
     createNewMove();
-    showSequence(game.order)
-    correctAnswer();
+    showSequence(game.order);
+    game.user_order = [];
+}
+
+function restart() {
+    clean();
+    play();
 }
