@@ -1,6 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --color-blue: #0909ef;
+    --color-red: #f60707;
+    --color-green: #0ab020;
+    --color-yellow: #ecef0c;
+    --color-bg: #9ffefe;
+    --color-button: #1c1a1a;
+}
+
+html {
+    font-size: 62,5%;
+}
+
 body {
     margin: 0;
-    background-color: rgb(208, 255, 239);
+    background-color: var(--color-bg);
 }
 
 .game-container {
@@ -17,8 +35,8 @@ body {
     grid-template-areas: 'green-field red-field'
     'yellow-field blue-field';
     grid-gap: 10px;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
+    border: 1px solid var(--color-bg);
+    background-color: var(--color-bg);
     border-radius: 100%;
     width: 700px;
     height: 700px;
@@ -26,28 +44,63 @@ body {
 
 #green-field {
     grid-area: green-field;
-    background-color: green;
+    background-color: var(--color-green);
     border-top-left-radius: 100%;
 }
 
 #red-field {
     grid-area: red-field;
-    background-color: red;
+    background-color: var(--color-red);
     border-top-right-radius: 100%;
 }
 
 #yellow-field {
     grid-area: yellow-field;
-    background-color: yellow;
+    background-color: var(--color-yellow);
     border-bottom-left-radius: 100%;
 }
 
 #blue-field {
     grid-area: blue-field;
-    background-color: blue;
+    background-color: var(--color-blue);
     border-bottom-right-radius: 100%;
 }
 
 .selected {
     opacity: 0.3;
+}
+
+p.text {
+    font-size: 5vw;
+    text-align: center;
+    padding: 2.5vw 0;
+    color: var(--color-button);
+}
+
+.buttons-container {
+    width: 300px;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    color: var(--color-bg);
+    background-color: var(--color-button);
+    height: 48px;
+    opacity: 0.75;
 }
