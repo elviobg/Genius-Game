@@ -22,12 +22,12 @@ function playerMove(selectedColor) {
     const position = game.user_order.length;
     if(game.order[position] !== selectedColor) {
         wrongAnswer();
+        return;
     }
     game.user_order[game.user_order.length] = selectedColor;
+    const movesLefting = game.level-position;
+    $('#leftMoves').text(movesLefting);
 
-    console.log(game.order);
-    console.log(game.user_order);
-    console.log(selectedColor);
     if(position === game.order.length - 1) {
         correctAnswer();
     }
@@ -36,6 +36,8 @@ function playerMove(selectedColor) {
 function createNewMove() {
     const selectedColor = buttonsOrder[Math.floor(Math.random() * buttonsOrder.length)];
     game.order[game.level] = selectedColor;
+    $('#score').text(`Level: ${game.level+1}`);
+    $('#leftMoves').text(game.level+1);
 }
 
 function turnOnColor(element) {
@@ -68,7 +70,7 @@ function correctAnswer() {
 }
 
 function wrongAnswer() {
-    console.log('Fim!');
+    $('#leftMoves').text('Errooooou!!!!');
     clean();
 }
 
