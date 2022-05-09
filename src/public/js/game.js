@@ -49,9 +49,9 @@ function turnOffColor(element) {
 }
 
 function showSequence(order, index=0) {
-    game.player_turn = false;
+    denyPlayerMove()
     if(order[index] === undefined) {
-        game.player_turn = true;
+        allowPlayerMove();
         return;
     }
     const element = $(`#${order[index]}`)[0];
@@ -78,7 +78,17 @@ function clean() {
     game.level = 0;
     game.order = [];
     game.user_order = [];
+    denyPlayerMove();
+}
+
+function allowPlayerMove() {
+    game.player_turn = true;
+    $('.field').css('cursor', 'pointer');
+}
+
+function denyPlayerMove() {
     game.player_turn = false;
+    $('.field').css('cursor', 'default');
 }
 
 function playNewStep() {

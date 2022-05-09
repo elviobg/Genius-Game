@@ -42,6 +42,10 @@ body {
     height: 700px;
 }
 
+.field {
+    cursor: pointer;
+}
+
 #green-field {
     grid-area: green-field;
     background-color: var(--color-green);
