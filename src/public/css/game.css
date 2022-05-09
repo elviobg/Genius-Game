@@ -29,8 +29,7 @@ body {
     align-items: center;
 }
 
-#board{
-    
+#board{ 
     display: grid;
     grid-template-areas: 'green-field red-field'
     'yellow-field blue-field';
