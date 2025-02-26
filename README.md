@@ -1,4 +1,4 @@
-# Choplifter game 🚀  
+# Genius Game 🚀  
 Este projeto é um jogo simples réplica do popular jogo Genius desenvolvido com **HTML, CSS e JavaScript (jQuery)**. O objetivo do jogo é replicar os movimentos gerados pelo jogo, cada vez que acerta aumenta-se um movimento aleatório, aumentado-se assim a dificuldade.
 O projeto faz parte da Formação em Desenvolvimento de Jogos da DIO
 
