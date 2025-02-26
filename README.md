@@ -8,18 +8,15 @@ O projeto faz parte da Formação em Desenvolvimento de Jogos da DIO
 - JavaScript (jQuery)  
 
 ## 🎮 Funcionalidades  
-- Controle da nave com teclado  (W S)
-- Disparo da arma (D)
-- Resgate de soldados
-- Obstáculos dinâmicos  
+- Movimentos randômicos sem repetições programadas
 - Sistema de pontuação  
-- Sons e animações  
+- Animações  
 
 ## 🚀 Como Executar  
 Clone este repositório:  
 ```
-git clone https://github.com/elviobg/choplifter-game.git
-cd choplifter-game
+git clone https://github.com/elviobg/genius-game.git
+cd genius-Game
 ```
 Abrir a página index.html direto no navegador
 
